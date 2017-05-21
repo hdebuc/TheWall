@@ -20,28 +20,33 @@ class User extends React.Component{
         console.log(this.state.users);
         var users = this.state.users.map((user, index) => {
             return (
-                <div key={index}>
-                    <table>
-                        <thead> 
-                            <tr>
-                            <td>{user.username}</td>
-                            <td>{user.createdAt}</td>
-                            <td>{user.password}</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                <tr key={index}>
+                    <td>{user.username}</td>
+                    <td>{user.createdAt}</td>
+                    <td>{user.password}</td>
+                </tr>
             )
         })
+        console.log(users)
         return(
             <div>
                 <h1>This is the User</h1>
-                <td>{users}<br/></td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Created</th>
+                            <th>Password</th>
+                        </tr>
+                    </thead> 
+                    {users}   
+                </table>
             </div>
         )
     }
 }
 export default User;
+
                
                 
                     
